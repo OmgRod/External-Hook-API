@@ -1,0 +1,26 @@
+{
+	"geode": "4.1.2",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "omgrod.external_hook_api",
+	"name": "External Hook API",
+	"version": "v1.0.0",
+	"developers": ["Viper", "OmgRod"],
+	"description": "Hook external mod layers using this tool made by Viper.",
+	"api": {
+		"include": [
+			"include/*.hpp"
+		]
+	},
+	"links": {
+		"community": "https://discord.gg/vK3DuqJwyW",
+		"homepage": "https://omgrod.me/",
+		"source": "https://github.com/OmgRod/External-Hook-API"
+	},
+	"tags": ["developer", "utility", "universal"],
+	"early-load": true
+}
