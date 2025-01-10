@@ -1,3 +1,7 @@
-# 1.0.0
+# v1.0.1
+
+- Updated mod logo
+
+# v1.0.0
 
 - Added the class
