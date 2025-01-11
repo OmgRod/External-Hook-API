@@ -14,9 +14,6 @@ public:                                                \
 class $modify(CCLayer) {                               \
     bool init() {                                      \
         if (!CCLayer::init()) return false;            \
-        if (!Mod::get()->getSettingValue<bool>("external-mods")) { \
-            return true;                               \
-        }                                              \
         if (auto x = typeinfo_cast<className*>(this)) {\
             queueInMainThread([=] { x->HookClassInit(); }); \
             return true;                               \
@@ -37,9 +34,6 @@ class $modify(CCDirector) {                            \
     }                                                  \
     void willSwitchToScene(CCScene* scene) {           \
         CCDirector::willSwitchToScene(scene);          \
-        if (!Mod::get()->getSettingValue<bool>("external-mods")) { \
-            return;                                    \
-        }                                              \
         if (CCLayer* child = scene->getChildByType<CCLayer>(0)) { \
             if (child->getID() == className) {         \
                 unique##Sillyclass sillyInstance;      \
