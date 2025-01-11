@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.21)
 
-project(ExternalHookAPI)
+project(external-hook-api)
 
-add_library(ExternalHookAPI INTERFACE)
+add_library(external-hook-api INTERFACE)
 
-set_target_properties(ExternalHookAPI PROPERTIES CXX_VISIBILITY_PRESET hidden)
+set_target_properties(external-hook-api PROPERTIES CXX_VISIBILITY_PRESET hidden)
 
-target_sources(ExternalHookAPI INTERFACE
+target_sources(external-hook-api INTERFACE
     # ${CMAKE_CURRENT_SOURCE_DIR}/src/backend.cpp
     # ${CMAKE_CURRENT_SOURCE_DIR}/src/hooks.cpp
 )
 
-target_include_directories(ExternalHookAPI INTERFACE include)
+target_include_directories(external-hook-api INTERFACE include)
