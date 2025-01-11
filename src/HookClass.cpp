@@ -1,4 +1,4 @@
-#include "HookClass.hpp"
+#include "../include/HookClass.hpp"
 
 bool $modify(CCLayer)::init() {
     if (!CCLayer::init()) return false;
