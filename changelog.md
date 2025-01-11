@@ -1,6 +1,7 @@
 # v1.0.2
 
 - Removed Geodify stuff
+- Refactored code
 
 # v1.0.1
 
