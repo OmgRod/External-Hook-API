@@ -12,14 +12,7 @@ public:                                                \
     void HookClassInit();                              \
 };                                                     \
 class $modify(CCLayer) {                               \
-    bool init() {                                      \
-        if (!CCLayer::init()) return false;            \
-        if (auto x = typeinfo_cast<className*>(this)) {\
-            queueInMainThread([=] { x->HookClassInit(); }); \
-            return true;                               \
-        }                                              \
-        return true;                                   \
-    }                                                  \
+    bool init() override;                              \
 };                                                     \
 void className::HookClassInit()
 
@@ -29,17 +22,7 @@ public:                                                \
     void HookClassInit(CCNode* _This);                 \
 };                                                     \
 class $modify(CCDirector) {                            \
-    static void onModify(auto& self) {                 \
-        (void)self.setHookPriority("CCDirector::willSwitchToScene", -999); \
-    }                                                  \
-    void willSwitchToScene(CCScene* scene) {           \
-        CCDirector::willSwitchToScene(scene);          \
-        if (CCLayer* child = scene->getChildByType<CCLayer>(0)) { \
-            if (child->getID() == className) {         \
-                unique##Sillyclass sillyInstance;      \
-                sillyInstance.HookClassInit(child);    \
-            }                                          \
-        }                                              \
-    }                                                  \
+    static void onModify(auto& self);                  \
+    void willSwitchToScene(CCScene* scene) override;   \
 };                                                     \
 void unique##Sillyclass::HookClassInit(CCNode* _This)
