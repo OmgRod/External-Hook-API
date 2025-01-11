@@ -9,7 +9,7 @@ project(ExternalHookAPI VERSION 1.0.0)
 set(CMAKE_DISABLE_PRECOMPILE_HEADERS ON)
 
 add_library(${PROJECT_NAME} SHARED
-    src/main.cpp
+    src/HookClass.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})
